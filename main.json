@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://gist.githubusercontent.com/petrepopescu21/e65ae4ebd7995d74ec3b0c881d00c1db/raw/ccc87a0d4e8ed7a24630d353cfb4118dd990d0bd/itec.schema.json",
+    "$id": "https://raw.githubusercontent.com/petrepopescu21/itec.schema/master/main.json",
     "type": "object",
     "properties": {
         "globalParams": {"$ref":"#/definitions/globalParams"},
