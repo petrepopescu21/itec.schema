@@ -1,0 +1,143 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://gist.githubusercontent.com/petrepopescu21/e65ae4ebd7995d74ec3b0c881d00c1db/raw/ccc87a0d4e8ed7a24630d353cfb4118dd990d0bd/itec.schema.json",
+    "type": "object",
+    "properties": {
+        "globalParams": {"$ref":"#/definitions/globalParams"},
+        "vmArray": {
+            "title": "Virtual Machines",
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/vm"
+            }
+        }
+    },
+    "definitions": {
+        "globalParams": {
+            "title": "Global Parameters",
+            "type": "object",
+            "required": ["appname","project","appcode","environment","timezone","entity"],
+            "properties": {
+                "appname": {
+                    "type": "string",
+                    "title": "Application Name",
+                    "description": "The application's name"
+                },
+                "project": {
+                    "type": "string"
+                },
+                "appcode": {
+                    "type": "string",
+                    "title": "Application Code",
+                    "description": "The shortened Application Name \n eg. Project => PRJT",
+                    "pattern": "^[A-Z]{4}$",
+                    "errorMessage": {
+                        "pattern": "App Code should be a 4-letter UPPERCASE code abbreviation."
+                    }
+                },
+                "environment": {
+                    "type": "string",
+                    "enum": [
+                        "production",
+                        "development",
+                        "uat",
+                        "test",
+                        "staging"
+                    ],
+                    "errorMessage": {
+                        "enum": "Environment should be one of the following values: production, staging, development, uat, test"
+                    }
+                },
+                "timezone": {
+                    "type": "integer",
+                    "multipleOf": 0.5,
+                    "minimum": -12,
+                    "maximum": 12,
+                    "errorMessage": {
+                        "_": "Please enter a valid timezone"
+                    }
+                },
+                "entity": {
+                    "type": "string",
+                    "pattern": "^[a-z]{3}",
+                    "errorMessage": {
+                        "pattern": "Entity should be a lowercase 3 letter string "
+                    }
+                }
+            }
+        },
+        "vm": {
+            "type": "object",
+            "title": "VM",
+            "properties": {
+                "function": {
+                    "type": "string"
+                },
+                "typecode": {
+                    "type": "string",
+                    "pattern": "^[a-z]{3}",
+                    "errorMessage": {
+                        "pattern": "Typecode should be a lowercase 3 letter string "
+                    }
+                },
+                "os": {
+                    "type": "string",
+                    "enum": [
+                        "WS2012R2",
+                        "WS2016",
+                        "RedHat",
+                        "SQLSRV2016SP2DEV",
+                        "SQLSRV2016SP2STD",
+                        "SQLSRV2016SP2ENT"
+                    ]
+                },
+                "size": {
+                    "type": "string",
+                    "enum": [
+                        "Standard_B2s",
+                        "Standard_B2ms",
+                        "Standard_B4ms",
+                        "Standard_B8ms",
+                        "Standard_F2s_v2",
+                        "Standard_F4s_v2",
+                        "Standard_F8s_v2",
+                        "Standard_F16s_v2",
+                        "Standard_E2s_v3",
+                        "Standard_E4s_v3",
+                        "Standard_E8s_v3",
+                        "Standard_E16s_v3",
+                        "Standard_D2s_v3",
+                        "Standard_D4s_v3",
+                        "Standard_D8s_v3",
+                        "Standard_D16s_v3",
+                        "Standard_F2s",
+                        "Standard_F4s",
+                        "Standard_F8s",
+                        "Standard_F16s"
+                    ]
+                },
+                "diskArray": {
+                    "title": "Data Disks",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/vm/definitions/vmDisk"
+                    },
+                    "minItems": 0
+                }
+            },
+            "definitions": {
+                "vmDisk": {
+                    "$id": "#vmDisk",
+                    "type": "object",
+                    "properties": {
+                        "size": {
+                            "title": "Disk Size",
+                            "type": "integer",
+                            "enum": [128,256,512,1024,2048,4096,8192]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
