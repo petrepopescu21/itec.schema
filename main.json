@@ -59,7 +59,7 @@
                 },
                 "entity": {
                     "type": "string",
-                    "pattern": "^[a-z]{3}",
+                    "pattern": "^[a-z]{3}$",
                     "errorMessage": {
                         "pattern": "Entity should be a lowercase 3 letter string "
                     }
@@ -75,7 +75,7 @@
                 },
                 "typecode": {
                     "type": "string",
-                    "pattern": "^[a-z]{3}",
+                    "pattern": "^[a-z]{3}$",
                     "errorMessage": {
                         "pattern": "Typecode should be a lowercase 3 letter string "
                     }
