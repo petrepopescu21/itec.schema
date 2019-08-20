@@ -49,7 +49,7 @@
                     }
                 },
                 "timezone": {
-                    "type": "integer",
+                    "type": "number",
                     "multipleOf": 0.5,
                     "minimum": -12,
                     "maximum": 12,
