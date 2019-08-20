@@ -26,14 +26,6 @@
                 "project": {
                     "type": "string"
                 },
-                "petre": {
-                    "type": "string",
-                    "pattern": "^asd$",
-                    "description": "DELETE THIS",
-                    "errorMessage": {
-                        "pattern": "Yo pattern is wong!"
-                    }
-                },
                 "appcode": {
                     "type": "string",
                     "title": "Application Code",
