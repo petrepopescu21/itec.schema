@@ -26,6 +26,11 @@
                 "project": {
                     "type": "string"
                 },
+                "test": {
+                    "title": "Custom Title",
+                    "type": "string"
+                    
+                },
                 "appcode": {
                     "type": "string",
                     "title": "Application Code",
