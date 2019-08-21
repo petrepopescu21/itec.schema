@@ -75,7 +75,8 @@
                 },
                 "workgroup": {
                     "type": "boolean",
-                    "title": "Internet Facing"
+                    "title": "Internet Facing",
+                    "description": "Will this VM be exposed to the internet?"
                 },
                 "typecode": {
                     "type": "string",
