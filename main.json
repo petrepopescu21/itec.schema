@@ -73,6 +73,10 @@
                 "function": {
                     "type": "string"
                 },
+                "workgroup": {
+                    "type": "boolean",
+                    "title": "Internet Facing"
+                },
                 "typecode": {
                     "type": "string",
                     "pattern": "^[a-z]{3}$",
