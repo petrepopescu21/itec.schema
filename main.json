@@ -21,7 +21,8 @@
                 "appname": {
                     "type": "string",
                     "title": "Application Name",
-                    "description": "The application's name"
+                    "description": "The application's name",
+                    "x-display": "hidden"
                 },
                 "project": {
                     "type": "string"
