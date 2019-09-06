@@ -3,7 +3,9 @@
     "$id": "https://raw.githubusercontent.com/petrepopescu21/itec.schema/master/main.json",
     "type": "object",
     "properties": {
-        "globalParams": {"$ref":"#/definitions/globalParams"},
+        "globalParams": {
+            "$ref": "#/definitions/globalParams"
+        },
         "vmArray": {
             "title": "Virtual Machines",
             "type": "array",
@@ -16,27 +18,23 @@
         "globalParams": {
             "title": "Global Parameters",
             "type": "object",
-            "required": ["appname","project","appcode","environment","timezone","entity"],
+            "required": [
+                "AppName",
+                "Project",
+                "Appcode",
+                "Environment",
+                "Timezone"
+            ],
             "properties": {
-                "appname": {
+                "AppName": {
                     "type": "string",
                     "title": "Application Name",
-                    "description": "The application's name",
-                    "x-display": "hidden"
+                    "description": "The application's name"
                 },
-                "project": {
+                "Project": {
                     "type": "string"
                 },
-                "appcode": {
-                    "type": "string",
-                    "title": "Application Code",
-                    "description": "The shortened Application Name \n eg. Project => PRJT",
-                    "pattern": "^[A-Z]{4}$",
-                    "errorMessage": {
-                        "pattern": "App Code should be a 4-letter UPPERCASE code abbreviation."
-                    }
-                },
-                "environment": {
+                "Environment": {
                     "type": "string",
                     "enum": [
                         "production",
@@ -49,21 +47,50 @@
                         "enum": "Environment should be one of the following values: production, staging, development, uat, test"
                     }
                 },
-                "timezone": {
+                "Timezone": {
                     "type": "number",
-                    "multipleOf": 0.5,
-                    "minimum": -12,
-                    "maximum": 12,
-                    "errorMessage": {
-                        "_": "Please enter a valid timezone"
-                    }
-                },
-                "entity": {
-                    "type": "string",
-                    "pattern": "^[a-z]{3}$",
-                    "errorMessage": {
-                        "pattern": "Entity should be a lowercase 3 letter string "
-                    }
+                    "enum": [
+                        -12,
+                        -11,
+                        -10,
+                        -9.5,
+                        -9,
+                        8,
+                        -7,
+                        -6,
+                        -5,
+                        -4,
+                        -4.5,
+                        -3.5,
+                        -3,
+                        -2,
+                        -1,
+                        0,
+                        1,
+                        2,
+                        3,
+                        3.5,
+                        4,
+                        4.5,
+                        5,
+                        5.5,
+                        5.75,
+                        6,
+                        6.5,
+                        7,
+                        8,
+                        8.75,
+                        9,
+                        9.5,
+                        10,
+                        10.5,
+                        11,
+                        11.5,
+                        12,
+                        12.75,
+                        13,
+                        14
+                    ]
                 }
             }
         },
@@ -71,22 +98,51 @@
             "type": "object",
             "title": "VM",
             "properties": {
-                "function": {
+                "Function": {
                     "type": "string"
                 },
-                "workgroup": {
+                "Appcode": {
+                    "type": "string",
+                    "title": "Application Code",
+                    "description": "The shortened Application Name \n eg. Project => PRJT",
+                    "pattern": "^[A-Z]{4}$",
+                    "errorMessage": {
+                        "pattern": "App Code should be a 4-letter UPPERCASE code abbreviation."
+                    }
+                },
+                "SubnetCode": {
+                    "type": "string",
+                    "enum": [
+                        "app",
+                        "db",
+                        "web"
+                    ],
+                    "x-display": "hidden"
+                },
+                "Internet": {
                     "type": "boolean",
                     "title": "Internet Facing",
                     "description": "Will this VM be exposed to the internet?"
                 },
-                "typecode": {
+                "Adcodedomain": {
                     "type": "string",
-                    "pattern": "^[a-z]{3}$",
-                    "errorMessage": {
-                        "pattern": "Typecode should be a lowercase 3 letter string "
-                    }
+                    "x-display": "hidden",
+                    "enum": [
+                        "l",
+                        "w"
+                    ]
                 },
-                "os": {
+                "Typecode": {
+                    "type": "string",
+                    "enum": [
+                        "app",
+                        "web",
+                        "db",
+                        "dc",
+                        "dns"
+                    ]
+                },
+                "Os": {
                     "type": "string",
                     "enum": [
                         "WS2012R2",
@@ -97,7 +153,18 @@
                         "SQLSRV2016SP2ENT"
                     ]
                 },
-                "size": {
+                "OsDiskType": {
+                    "title": "OS Disk Type",
+                    "x-display": "hidden",
+                    "type": "string",
+                    "enum": [
+                        "Standard_LRS",
+                        "StandardSSD_LRS",
+                        "Premium_LRS",
+                        "UltraSSD_LRS"
+                    ]
+                },
+                "Size": {
                     "type": "string",
                     "enum": [
                         "Standard_B2s",
@@ -122,7 +189,7 @@
                         "Standard_F16s"
                     ]
                 },
-                "diskArray": {
+                "DiskArray": {
                     "title": "Data Disks",
                     "type": "array",
                     "items": {
@@ -139,7 +206,26 @@
                         "size": {
                             "title": "Disk Size",
                             "type": "integer",
-                            "enum": [128,256,512,1024,2048,4096,8192]
+                            "enum": [
+                                128,
+                                256,
+                                512,
+                                1024,
+                                2048,
+                                4096,
+                                8192
+                            ]
+                        },
+                        "type": {
+                            "title": "Disk Type",
+                            "x-display": "hidden",
+                            "type": "string",
+                            "enum": [
+                                "Standard_LRS",
+                                "StandardSSD_LRS",
+                                "Premium_LRS",
+                                "UltraSSD_LRS"
+                            ]
                         }
                     }
                 }
