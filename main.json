@@ -207,7 +207,7 @@
                     "$id": "#vmDisk",
                     "type": "object",
                     "properties": {
-                        "size": {
+                        "diskSize": {
                             "title": "Disk Size",
                             "type": "integer",
                             "enum": [
@@ -220,7 +220,7 @@
                                 8192
                             ]
                         },
-                        "type": {
+                        "diskType": {
                             "title": "Disk Type",
                             "x-display": "hidden",
                             "type": "string",
