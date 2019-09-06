@@ -99,12 +99,14 @@
             "title": "VM",
             "properties": {
                 "Function": {
-                    "type": "string"
+                    "type": "string",
+                    "title": "Function of the VM",
+                    "description": "The function this VM will serve, such as webapi, webapp, database, etc"
                 },
                 "Appcode": {
                     "type": "string",
                     "title": "Application Code",
-                    "description": "The shortened Application Name \n eg. Project => PRJT",
+                    "description": "The shortened Application/Project Name which will show up in the name of the VM",
                     "pattern": "^[A-Z]{4}$",
                     "errorMessage": {
                         "pattern": "App Code should be a 4-letter UPPERCASE code abbreviation."
@@ -121,7 +123,7 @@
                 },
                 "Internet": {
                     "type": "boolean",
-                    "title": "Internet Facing",
+                    "title": "Internet Facing?",
                     "description": "Will this VM be exposed to the internet?"
                 },
                 "Adcodedomain": {
@@ -134,6 +136,8 @@
                 },
                 "Typecode": {
                     "type": "string",
+                    "title": "Type of VM for network configuration"
+                    "description": "Use \"web\" for VMs which hold webapps or webapis, \"app\" for general purpose application VMs or any of the available specific roles",
                     "enum": [
                         "app",
                         "web",
