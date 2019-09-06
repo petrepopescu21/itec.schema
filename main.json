@@ -103,7 +103,7 @@
                     "title": "Function of the VM",
                     "description": "The function this VM will serve, such as webapi, webapp, database, etc"
                 },
-                "Appcode": {
+                "AppCode": {
                     "type": "string",
                     "title": "Application Code",
                     "description": "The shortened Application/Project Name which will show up in the name of the VM",
@@ -126,7 +126,7 @@
                     "title": "Internet Facing?",
                     "description": "Will this VM be exposed to the internet?"
                 },
-                "Adcodedomain": {
+                "ADCodeDomain": {
                     "type": "string",
                     "x-display": "hidden",
                     "enum": [
@@ -134,7 +134,7 @@
                         "w"
                     ]
                 },
-                "Typecode": {
+                "TypeCode": {
                     "type": "string",
                     "title": "Type of VM for network configuration",
                     "description": "Use \"web\" for VMs which hold webapps or webapis, \"app\" for general purpose application VMs or any of the available specific roles",
@@ -146,7 +146,7 @@
                         "dns"
                     ]
                 },
-                "Os": {
+                "OS": {
                     "type": "string",
                     "enum": [
                         "WS2012R2",
@@ -157,7 +157,7 @@
                         "SQLSRV2016SP2ENT"
                     ]
                 },
-                "OsDiskType": {
+                "OSDiskType": {
                     "title": "OS Disk Type",
                     "x-display": "hidden",
                     "type": "string",
