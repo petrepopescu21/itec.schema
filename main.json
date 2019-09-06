@@ -136,7 +136,7 @@
                 },
                 "Typecode": {
                     "type": "string",
-                    "title": "Type of VM for network configuration"
+                    "title": "Type of VM for network configuration",
                     "description": "Use \"web\" for VMs which hold webapps or webapis, \"app\" for general purpose application VMs or any of the available specific roles",
                     "enum": [
                         "app",
