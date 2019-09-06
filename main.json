@@ -26,10 +26,10 @@
                 "Timezone"
             ],
             "properties": {
-                "AppName": {
+                "Subscription": {
                     "type": "string",
-                    "title": "Application Name",
-                    "description": "The application's name"
+                    "title": "Subscription Name",
+                    "description": "The subscription's name - eg. ECN-DEV"
                 },
                 "Project": {
                     "type": "string"
