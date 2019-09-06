@@ -32,7 +32,12 @@
                     "description": "The subscription's name - eg. ECN-DEV"
                 },
                 "Project": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Project name - will be used to set the resource group name",
+                    "pattern": "^[a-zA-Z]*$",
+                    "errorMessage": {
+                        "pattern": "Only letters - no whitespaces, numbers or special characters."
+                    }
                 },
                 "Environment": {
                     "type": "string",
